@@ -1,5 +1,5 @@
-import { addWaitList } from "../admin.js";
-import { User } from "./user.js";
+import { addWaitList } from "./admin.js";
+import { User } from "../auth/user.js";
 import { redirect, scheduleTask } from "../utils/utils.js";
 
 document.getElementById("role").addEventListener("change", (e) => {
@@ -25,7 +25,7 @@ registerForm.addEventListener("submit", (e) => {
             username,
             password,
             role_id,
-            budget: budget ? Number(budget) : null,
+            budget: budget ? Number(budget) : 0,
             status: 0,
         });
         user.save();
@@ -35,7 +35,7 @@ registerForm.addEventListener("submit", (e) => {
             username,
             password,
             role_id,
-            budget: budget ? Number(budget) : null,
+            budget: budget ? Number(budget) : 0,
             status: 1,
         });
         user.save();

@@ -3,6 +3,7 @@ import { getItem, setItem, uidGenerate } from "../utils/utils.js";
 
 export var users = getItem(USERS) || [
     {
+        id: 1,
         username: "admin",
         password: "12345",
         role_id: 1,
@@ -10,12 +11,14 @@ export var users = getItem(USERS) || [
         status: 1,
     },
 ];
+export var currentUser = getItem(USER) || {};
 
-export function setUsers(users) {
-    setItem(USERS, users);
+export function setUsers(_users) {
+
+    setItem(USERS, _users);
+    setCurrentUser(_users.find(u => u.id == currentUser.id));
 }
 
-export var currentUser = getItem(USER) || {};
 
 export const checkUserAuth = () => {
     if (Object.keys(getItem(USER)).length > 0 && currentUser.status == 1) {
@@ -30,6 +33,14 @@ export const setCurrentUser = (user) => {
     currentUser = user;
 };
 
+export function updateUser(user) {
+    let i = users.indexOf(users.find(u => u.id == user.id));
+    let _users = users;
+
+    _users[i] = user;
+    setUsers(_users);
+}
+
 export class User {
     id = uidGenerate();
     username;
@@ -38,6 +49,7 @@ export class User {
     budget = 0;
     wallet = 0;
     status;
+
     constructor({ username, password, role_id, budget, status }) {
         this.username = username;
         this.password = password;

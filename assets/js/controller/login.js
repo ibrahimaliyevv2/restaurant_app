@@ -1,5 +1,5 @@
 import { PATH } from "../constants.js";
-import { setCurrentUser, users } from "./user.js";
+import { setCurrentUser, users } from "../auth/user.js";
 import { redirect, scheduleTask, setItem } from "../utils/utils.js";
 
 const loginForm = document.getElementById("login_form");

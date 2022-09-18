@@ -1,6 +1,6 @@
-import { WAIT_LIST } from "./constants.js";
-import { getItem, pathname, scheduleTask, setItem } from "./utils/utils.js";
-import { users, setUsers } from './auth/user.js';
+import { WAIT_LIST } from "../constants.js";
+import { getItem, pathname, scheduleTask, setItem } from "../utils/utils.js";
+import { users, setUsers } from '../auth/user.js';
 export let waitList = getItem(WAIT_LIST) || [];
 
 export function addWaitList(user) {
@@ -12,6 +12,7 @@ export function deleteWaitList(id) {
     waitList = waitList.filter(item => item.id !== id);
     setItem(WAIT_LIST, waitList);
     scheduleTask(() => reload(), 500);
+    renderWaitList();
 }
 
 function acceptRestaurant(e) {
@@ -21,11 +22,9 @@ function acceptRestaurant(e) {
     setUsers(users);
     deleteWaitList(id)
 }
-
-
-if (pathname == "/admin.html") {
+function renderWaitList() {
     const table = document.getElementById("table_body_adminrest");
-
+    table.innerHTML = '';
     waitList.forEach((waitlist_item) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -37,5 +36,9 @@ if (pathname == "/admin.html") {
             .getElementById(waitlist_item.id)
             .addEventListener("click", acceptRestaurant);
     });
+}
 
+if (pathname == "/admin.html") {
+
+    renderWaitList();
 }
