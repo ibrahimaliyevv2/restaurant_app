@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>
-            <i class="fa fa-cutlery" aria-hidden="true"></i> Food Ordering App
-        </h1>
-        <button id="logout_btn">logout</button>
+      <button id="logout_btn" class="btn btn-danger w-100">Log out</button>
+      <h1>
+        <i class="fa fa-cutlery" aria-hidden="true"></i> Food Ordering App
+      </h1>
+      <div class="row justify-content-between">
+        <div class="col-md-6">
+          <h3>Courier name:</h3>
+        </div>
+        <div class="col-md-6">
+          <h3>Balance:</h3>
+        </div>
+      </div>
     </header>
     <main>
-        <section id="registered-restaurants-list">
-            <h2>Waiting registered restaurants</h2>
-            <table class="table" id="admin-rest-tbl">
-                <thead>
-                    <tr id="tr_head">
-                        <th scope="col">Restaurant:</th>
-                        <th scope="col">Accept Button:</th>
-                    </tr>
-                </thead>
-                <tbody id="table_body_adminrest">
-
-
-                </tbody>
+      <div class="container">
+        <div class="row">
+          <section id="all-orders-list" class="col-md-6">
+            <h2>All orders from customers</h2>
+            <table class="table" id="orders-courier-tbl">
+              <thead>
+                <tr id="tr_head">
+                  <th scope="col">Customer username:</th>
+                  <th scope="col">Whole price:</th>
+                  <th scope="col">My profit:</th>
+                  <th scope="col">Accept button:</th>
+                </tr>
+              </thead>
+              <tbody id="table_body_courierorders"></tbody>
             </table>
+          </section>
+          <section id="my-delivered-list" class="col-md-5">
+            <h2>All that courier delivered</h2>
+            <table class="table" id="delivered-courier-tbl">
+              <thead>
+                <tr id="tr_head">
+                  <th scope="col">Customer userame:</th>
+                  <th scope="col">Whole price:</th>
+                  <th scope="col">My profit:</th>
+                </tr>
+              </thead>
+              <tbody id="table_body_courierdelivered"></tbody>
             </table>
-        </section>
+          </section>
+        </div>
+      </div>
     </main>
 
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="./assets/js/auth/auth.js"></script>
-
-</body>
-
+  </body>
 </html>

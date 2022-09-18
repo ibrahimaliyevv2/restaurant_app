@@ -97,7 +97,7 @@ td {
 
 th {
   background: #ffbe76;
-  color: #fff;
+  color: #000;
 }
 
 .menu-item {
@@ -155,4 +155,17 @@ th {
   align-self: flex-end;
   font-size: 12px;
   cursor: pointer;
+}
+
+h3 {
+  background: red;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 0 0 1px #5f5a4b, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  margin: 18px 0 !important;
+  padding: 0px 0 5px 5px;
+  text-shadow: 2px 2px 3px #222222;
 }

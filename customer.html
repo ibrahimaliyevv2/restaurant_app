@@ -1,49 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>
-            <i class="fa fa-cutlery" aria-hidden="true"></i> Food Ordering App
-        </h1>
-        <button id="logout_btn">logout</button>
+      <button id="logout_btn" class="btn btn-danger w-100">Log out</button>
+      <h1>
+        <i class="fa fa-cutlery" aria-hidden="true"></i> Food Ordering App
+      </h1>
+      <div class="row justify-content-between">
+        <div class="col-md-6">
+          <h3>Customer name:</h3>
+        </div>
+        <div class="col-md-6">
+          <h3>Budget:</h3>
+        </div>
+      </div>
     </header>
     <main>
-        <section id="registered-restaurants-list">
-            <h2>Waiting registered restaurants</h2>
-            <table class="table" id="admin-rest-tbl">
-                <thead>
-                    <tr id="tr_head">
-                        <th scope="col">Restaurant:</th>
-                        <th scope="col">Accept Button:</th>
-                    </tr>
-                </thead>
-                <tbody id="table_body_adminrest">
-
-
-                </tbody>
+      <div class="container">
+        <div class="row">
+          <section id="all-foods-list" class="col-md-4">
+            <h2>All foods from restaurants</h2>
+            <table class="table" id="foods-customer-tbl">
+              <thead>
+                <tr id="tr_head">
+                  <th scope="col">Food name:</th>
+                  <th scope="col">Food price:</th>
+                  <th scope="col">Restaurant name:</th>
+                  <th scope="col">Order button:</th>
+                </tr>
+              </thead>
+              <tbody id="table_body_customerfoods"></tbody>
             </table>
-        </section>
+          </section>
+          <section id="my-basket-list" class="col-md-3">
+            <h2>Currently inside basket</h2>
+            <table class="table" id="basket-customer-tbl">
+              <thead>
+                <tr id="tr_head">
+                  <th scope="col">Food name:</th>
+                  <th scope="col">Food price:</th>
+                  <th scope="col">Delete button:</th>
+                </tr>
+              </thead>
+              <tbody id="table_body_customerbasket"></tbody>
+            </table>
+            <h3>All foods price:</h3>
+            <h3>Whole price with courier:</h3>
+            <button class="btn btn-success">Buy all</button>
+          </section>
+          <section id="customer-orders-list" class="col-md-3">
+            <h2>All customer orders</h2>
+            <table class="table" id="orders-customer-tbl">
+              <thead>
+                <tr id="tr_head">
+                  <th scope="col">Food name:</th>
+                  <th scope="col">Restaurant name:</th>
+                  <th scope="col">Status:</th>
+                </tr>
+              </thead>
+              <tbody id="table_body_customerorders"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
     </main>
 
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="./assets/js/auth/auth.js"></script>
-
-</body>
-
+  </body>
 </html>
